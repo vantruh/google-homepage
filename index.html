@@ -2,6 +2,9 @@
 <html>
     <head>
         <style>
+            body {
+                margin:0;
+            }
             #navbar {
                 list-style-type: none;
                 position:absolute;
@@ -76,9 +79,10 @@
             #search-bar {
                 display: flex;
                 flex-direction: row;
-                position: sticky;
+                position: relative;
                 justify-content: center;
                 margin-top: 3.5vh;
+                width: 100%;
             }
             #search-bar input {
                 width: 542px;
@@ -100,12 +104,52 @@
                 width: 35px;
                 height: 35px;
                 display: block;
-                left:auto;
                 mix-blend-mode: multiply;
-                margin-right: -36px;
+                margin-right: -40px;
                 margin-bottom: -5px;
                 margin-top: 7px;
                 opacity: 0.7;
+            }
+            #search-buttons {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 29px;
+                display:flex;
+                position:relative;
+            }
+            #search-buttons input{
+                margin:0px 5px;
+                border: 1px solid;
+                border-color: transparent;
+                height:30px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                border-radius:4px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #search-buttons input:hover {
+                border-color:rgba(0, 0, 0, 0.15);
+                box-shadow: 0 1px 2px 0 rgba(0,0,0,0.07),0 1px 3px 1px rgba(0,0,0,0.07);
+                cursor: pointer;
+            }
+            #empty-area {
+                display: flex;
+                position:relative;
+                min-height: 300px;
+                margin-top:30px;
+                justify-content: center;
+            }
+            #empty-area p {
+                align-self: flex-start;
+                font-size:small;
+                margin:0;
+                font-weight: 100;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #empty-area a:hover {
+                text-decoration: underline!important;
             }
         </style>
     </head>
@@ -130,12 +174,13 @@
                 <img src="./m-glass.jpg">
                 <input type="search" autofocus>
             </div>
-            <div>
-
-            </div>
-            <div>
-
-            </div>
+        </div>
+        <div id="search-buttons">
+            <input type="submit" value="Google Search">
+            <input type="submit" value="I'm Feeling Lucky">
+        </div>
+        <div id="empty-area">
+            <p>Google offered in: <a href="#" style="text-decoration: none;">русский</a></p>
         </div>
     </body>
 </html>
